@@ -30,6 +30,9 @@ int main()
                 glViewport(0, 0, event.size.width, event.size.height);
        }
 
+        for (float i = 0.0; i < 1; i+=0.01) {
+            glClearColor(2*i, 1-i, i, i);
+
         // Activate the window before using OpenGL commands.
         // This is useless here because we have only one window which is
         // always the active one, but don't forget it if you use multiple windows
@@ -40,6 +43,7 @@ int main()
 
         // Finally, display the rendered frame on screen
         window.display();
+        }
     }
 
     return 0;
