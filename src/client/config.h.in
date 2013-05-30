@@ -1,0 +1,9 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+#define CRYO_CLIENT_VERSION_MAJOR @cryo_client_VERSION_MAJOR@
+#define CRYO_CLIENT_VERSION_MINOR @cryo_client_VERSION_MINOR@
+#define CRYO_CLIENT_VERSION_PATH @cryo_client_VERSION_PATCH@
+#define CRYO_CLIENT_VERSION @cryo_client_VERSION@
+
+#endif
