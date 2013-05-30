@@ -25,6 +25,9 @@
 
 ### 2) COMPILING
 
+cmake -DCMAKE_INSTALL_PREFIX=/usr ../cryo
+make
+make DESTDIR=dir install
 > cd build; cmake ..
 > make
 > make install
