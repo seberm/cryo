@@ -4,8 +4,40 @@ set(CMAKE_COLOR_MAKEFILE ON)
 # Cesta k modulum CMake
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})
 
-# TODO: Zde je potreba si jeste pohrat s instalacnima cestama a s vubec vsema cestama :)
-set(PROJECT_BINARY_DIR "build/bin" )#CACHE PATH "Installation directory for executables")
+# Prefix pro instalaci - defaultne u vetsiny distribuci /usr/local
+if (NOT DEFINED CMAKE_INSTALL_PREFIX)
+    set(CMAKE_INSTALL_PREFIX /usr/local)
+endif()
+
+# Adresar pro binarni data
+if (NOT DEFINED CMAKE_INSTALL_BINARY_DIR)
+    set(INSTALL_BINARY_DIR "${CMAKE_INSTALL_PREFIX}/bin")
+else ()
+    set(INSTALL_BINARY_DIR "${CMAKE_INSTALL_BINARY_DIR}")
+endif()
+
+# Adresar pro data programu
+if (NOT DEFINED CMAKE_INSTALL_DATA_DIR)
+    set(INSTALL_DATA_DIR "${CMAKE_INSTALL_PREFIX}/share")
+else()
+    set(INSTALL_DATA_DIR "${CMAKE_INSTALL_DATA_DIR}")
+endif()
+
+set(EXECUTABLE_OUTPUT_PATH "${PROJECT_BINARY_DIR}/bin")
+
+set(bitness 32)
+if (CMAKE_SIZEOF_VOID_P EQUAL 8) # Jedna se o 64bit architekturu?
+    set(bitness 64)
+endif()
+
+# Slozka pro knihovny se lisi v zavislosti na architekture
+set(LIBRARY_OUTPUT_PATH "${PROJECT_BINARY_DIR}/lib")
+if (bitness EQUAL 64)
+    set(LIBRARY_OUTPUT_PATH "${PROJECT_BINARY_DIR}/lib64")
+endif()
+
+#set(PROJECT_BINARY_DIR "build/bin" )#CACHE PATH "Installation directory for executables")
+
 set(PROJECT_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
 
 add_subdirectory(src)
