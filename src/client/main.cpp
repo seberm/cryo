@@ -1,32 +1,25 @@
-#include <SFML/System.hpp>
 #include <SFML/Window.hpp>
+#include <SFML/OpenGL.hpp>
 
-int main() {
-    sf::Window App(sf::VideoMode(800, 600, 32), "SFML Window");
-    App.Create(sf::VideoMode(800, 600, 32), "SFML Window");
+int main()
+{
+    sf::Window window(sf::VideoMode(800, 600), "My window");
 
-    //App.Create(sf::VideoMode(800, 600, 32), "SFML Window", sf::Style::Fullscreen);
-    
-    bool Running = true;
-    while (Running) {
-        sf::Event Event;
+    glClearDepth(1.f);
+    glClearColor(0.f, 0.f, 0.f, 0.f);
 
-        while (App.GetEvent(Event)) {
-            // Window closed
-            if (Event.Type == sf::Event::Closed)
-                Running = false;
-
-            // Escape key pressed
-            if ((Event.Type == sf::Event::KeyPressed) &&
-                (Event.Key.Code == sf::Key::Escape)) {
-
-                Running = false;
-            }
+    // run the program as long as the window is open
+    while (window.isOpen())
+    {
+        // check all the window's events that were triggered since the last iteration of the loop
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            // "close requested" event: we close the window
+            if (event.type == sf::Event::Closed)
+                window.close();
         }
-
-        App.Display();
     }
 
-    return EXIT_SUCCESS;
+    return 0;
 }
-
