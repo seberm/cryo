@@ -1,0 +1,10 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+// Konfiguracni soubor serveru, ktery je jeste preparsovan pomoci CMake
+#define CRYO_SERVER_VERSION_MAJOR @cryo_server_VERSION_MAJOR@
+#define CRYO_SERVER_VERSION_MINOR @cryo_server_VERSION_MINOR@
+#define CRYO_SERVER_VERSION_REVISION @cryo_server_VERSION_REVISION@
+#define CRYO_SERVER_VERSION @cryo_server_VERSION@
+
+#endif
