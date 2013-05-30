@@ -1,6 +1,7 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+// Konfiguracni soubor klienta, ktery je jeste preparsovan pomoci CMake
 #define CRYO_CLIENT_VERSION_MAJOR @cryo_client_VERSION_MAJOR@
 #define CRYO_CLIENT_VERSION_MINOR @cryo_client_VERSION_MINOR@
 #define CRYO_CLIENT_VERSION_PATH @cryo_client_VERSION_PATCH@
