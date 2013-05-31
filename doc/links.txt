@@ -1,0 +1,4 @@
+# SFML - Pokrocilejsi priklady aplikaci
+- http://en.sfml-dev.org/forums/index.php?topic=9473.0    -    https://github.com/eXpl0it3r/Examples/tree/master/SFML
+- Dalsi priklady lze nalez v /usr/share/SFML/examples
+- Nejaka studentska hra (ale celkem pekna) napsana v SFML + Cpp: http://sourceforge.net/p/team42/playground/ci/default/tree/SpaceOfant/ 
