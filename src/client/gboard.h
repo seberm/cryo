@@ -33,6 +33,11 @@ class GBoard {
          */
         GBoard(sf::RenderWindow *window);
 
+        /**
+         * Vykresli hraci plochu do okna
+         */
+        void draw();
+
     private:
         /**
          * Okno, na kterem se zobrazuje hraci plocha

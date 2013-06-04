@@ -23,3 +23,13 @@
 GBoard::GBoard(sf::RenderWindow *window) {
     m_window = window;
 }
+
+
+void GBoard::draw() {
+    sf::CircleShape shape(20);
+    shape.setFillColor(sf::Color::Red);
+    shape.setOutlineThickness(10);
+    shape.setOutlineColor(sf::Color::Green);
+
+    m_window->draw(shape);
+}
