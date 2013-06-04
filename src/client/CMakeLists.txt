@@ -28,11 +28,13 @@ include_directories("${CLIENT_BINARY_DIR}")
 set(SRCS
     "main.cpp"
     "gboard.cpp"
+    "gplayer.cpp"
 )
 
 # Specifikace hlavickovych souboru
 set(HDRS
     "gboard.h"
+    "gplayer.h"
 )
 
 # Vytvoreni binarky programu
