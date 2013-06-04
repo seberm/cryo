@@ -27,12 +27,13 @@ include_directories("${CLIENT_BINARY_DIR}")
 # Specifikace zdrojovych kodu
 set(SRCS
     "main.cpp"
+    "gboard.cpp"
 )
 
 # Specifikace hlavickovych souboru
-#set(HDRS
-
-#)
+set(HDRS
+    "gboard.h"
+)
 
 # Vytvoreni binarky programu
 add_executable(${EXECUTABLE_NAME} ${SRCS} ${HDRS})
