@@ -1,6 +1,16 @@
 cmake_minimum_required(VERSION 2.6)
 set(CMAKE_COLOR_MAKEFILE ON)
 
+# Nastavime flagy
+set(CMAKE_CXX_FLAGS "-pedantic -Wall -Wextra")
+set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG")
+set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g")
+
+# Zapneme podporu C++11
+# TODO: Jeste overit, ze se C++11 opravdu zapina!
+add_definitions("-std=c++0x")
+
 # Cesta k modulum CMake
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})
 
